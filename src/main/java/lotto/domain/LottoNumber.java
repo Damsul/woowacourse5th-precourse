@@ -7,11 +7,10 @@ public class LottoNumber {
     private static final String NUMBER_RANGE_ERROR = "로또 숫자는 " + MIN + " 이상 " + MAX + " 이하의 숫자만 가능합니다.";
     public static final String TYPE_ERROR = "로또 번호는 숫자만 가능합니다.";
 
-
     private int number;
 
     public LottoNumber(String input) {
-        int number = convertToInt(input.trim());
+        int number = convertToInt(input);
         validateNumber(number);
         this.number = number;
     }
