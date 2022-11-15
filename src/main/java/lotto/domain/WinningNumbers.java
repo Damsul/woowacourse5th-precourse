@@ -15,5 +15,10 @@ public class WinningNumbers {
             throw new IllegalArgumentException();
         }
     }
+
+    public Ranking calculatePrize(LottoNumbers otherLottoNumbers) {
+        int cnt = lottoNumbers.calculateSameCount(otherLottoNumbers);
+        return Ranking.findRankingByCnt(cnt);
+    }
     
 }

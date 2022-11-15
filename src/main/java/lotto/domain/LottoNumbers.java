@@ -36,4 +36,19 @@ public class LottoNumbers {
         return lottoNumbers.stream()
             .anyMatch(lottoNumber -> lottoNumber.getNumber() == number);
     }
+
+    public int calculateSameCount(LottoNumbers otherLottoNumbers) {
+        return otherLottoNumbers.compareLottoNumbers(lottoNumbers);
+    }
+
+    private int compareLottoNumbers(List<LottoNumber> lottoNumbers) {
+        int size = lottoNumbers.size();
+        int cnt = 0;
+        for (int i = 0; i < size; i++) {
+            if (this.lottoNumbers.get(i).getNumber() == lottoNumbers.get(i).getNumber()) {
+                cnt++;
+            }
+        }
+        return cnt;
+    }
 }
