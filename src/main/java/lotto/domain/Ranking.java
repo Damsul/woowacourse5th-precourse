@@ -27,12 +27,6 @@ public enum Ranking {
             .orElse(null);
     }
 
-    public static Ranking[] sortByPrize() {
-        Ranking[] arr = Ranking.values();
-        Arrays.sort(arr, Comparator.comparingInt(a -> a.prize));
-        return arr;
-    }
-
     public long multiple(Integer count) {
         return (long) prize * count;
     }
