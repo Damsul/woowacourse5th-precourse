@@ -2,10 +2,13 @@ package lotto.view;
 
 import java.util.Comparator;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 import lotto.domain.LottoNumber;
 import lotto.domain.LottoNumbers;
 import lotto.domain.LottoTickets;
+import lotto.domain.Ranking;
+import lotto.domain.WinningResult;
 
 public class OutputView {
     public static final String OPEN_BRACKET = "[";
@@ -78,5 +81,8 @@ public class OutputView {
             .append(LINE_SEPARATOR);
     }
 
-    // TODO 총 수익률은 0.35입니다.(기준이 1이기 때문에 결과적으로 손해라는 의미임)
+    public static void printProfit(double profit) {
+        String sentence = String.format("총 수익률은 %.2f입니다.", profit);
+        System.out.println(sentence);
+    }
 }

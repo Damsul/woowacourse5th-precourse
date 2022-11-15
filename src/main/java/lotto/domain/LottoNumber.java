@@ -17,6 +17,10 @@ public class LottoNumber {
         this.number = number;
     }
 
+    public int toInt() {
+        return number;
+    }
+
     private int convertToInt(String input) {
         try {
             return Integer.parseInt(input);
@@ -47,5 +51,12 @@ public class LottoNumber {
     @Override
     public int hashCode() {
         return Objects.hash(number);
+    }
+
+    @Override
+    public String toString() {
+        return "LottoNumber{" +
+            "number=" + number +
+            '}';
     }
 }
