@@ -1,6 +1,6 @@
 package lotto.domain;
 
-import static org.assertj.core.api.Assertions.assertThatNoException;
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 import org.junit.jupiter.api.DisplayName;
@@ -19,6 +19,6 @@ class LottoNumberTest {
     @ValueSource(ints = {1, 25, 45})
     @DisplayName("숫자가 범위 내에서 생성됨")
     void correct(int number) {
-        assertThatNoException().isThrownBy(() -> LottoNumber.of(number));
+        assertThat(LottoNumber.of(number)).isNotNull();
     }
 }
