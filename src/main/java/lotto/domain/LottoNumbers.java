@@ -7,7 +7,6 @@ import java.util.stream.Collectors;
 public class LottoNumbers {
     public static final String DELIMITER = ",";
     public static final String BLANK = " ";
-
     private final List<LottoNumber> lottoNumbers;
 
     public LottoNumbers(String input) {
@@ -38,9 +37,9 @@ public class LottoNumbers {
             .collect(Collectors.toList());
     }
 
-    public boolean isContain(int number) {
+    public boolean isContain(LottoNumber otherLottoNumber) {
         return lottoNumbers.stream()
-            .anyMatch(lottoNumber -> lottoNumber.getNumber() == number);
+            .anyMatch(lottoNumber -> lottoNumber.equals(otherLottoNumber));
     }
 
     public int calculateSameCount(LottoNumbers otherLottoNumbers) {
@@ -51,7 +50,7 @@ public class LottoNumbers {
         int size = lottoNumbers.size();
         int cnt = 0;
         for (int i = 0; i < size; i++) {
-            if (this.lottoNumbers.get(i).getNumber() == lottoNumbers.get(i).getNumber()) {
+            if (this.lottoNumbers.get(i).equals(lottoNumbers.get(i))) {
                 cnt++;
             }
         }
