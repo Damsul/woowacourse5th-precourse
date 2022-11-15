@@ -10,8 +10,7 @@ public class LottoAmount {
 
     private final int amount;
 
-    public LottoAmount(String input) {
-        int amount = convertToInt(input);
+    public LottoAmount(int amount) {
         validateAmount(amount);
         this.amount = amount;
     }
