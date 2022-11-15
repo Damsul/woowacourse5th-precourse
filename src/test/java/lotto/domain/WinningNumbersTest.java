@@ -9,7 +9,6 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
 class WinningNumbersTest {
-    private WinningNumbers winningNumbers;
 
     @Test
     @DisplayName("중복 문자")
@@ -33,7 +32,7 @@ class WinningNumbersTest {
         // given
         LottoNumbers lottoNumbers = new LottoNumbers("1,2,3,4,5,6");
         LottoNumber bonusNumber = LottoNumber.of(7);
-        winningNumbers = new WinningNumbers(lottoNumbers, bonusNumber);
+        WinningNumbers winningNumbers = new WinningNumbers(lottoNumbers, bonusNumber);
 
         // when
         LottoNumbers myLotto = new LottoNumbers(input);
